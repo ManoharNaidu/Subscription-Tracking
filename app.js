@@ -10,6 +10,7 @@ import { connectDB } from "./database/mongoDB.js";
 // Middlewares
 import errorMiddleware from "./middlewares/error.middleware.js";
 import arcjetMiddleware from "./middlewares/arcjet.middleware.js";
+import workflowRouter from "./routes/workflow.routes.js";
 
 connectDB();
 
@@ -23,6 +24,7 @@ app.use(cookieParser());
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/subscription", subscriptionRouter);
+app.use("/api/v1/workflow", workflowRouter);
 
 app.get("/", (req, res) => {
   res.send(`Welcome to the Subscription Tracker API`);
