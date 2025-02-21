@@ -1,7 +1,7 @@
 import express from "express";
 import cookieParser from "cookie-parser";
 
-import { PORT } from "./config/env.js";
+import { PORT, SERVER_URL } from "./config/env.js";
 import authRouter from "./routes/auth.routes.js";
 import userRouter from "./routes/user.routes.js";
 import subscriptionRouter from "./routes/subscription.routes.js";
@@ -31,7 +31,7 @@ app.get("/", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`The website is running on http://localhost:${PORT}`);
+  console.log(`The website is running on ${SERVER_URL}:${PORT}`);
 });
 
 export default app;
