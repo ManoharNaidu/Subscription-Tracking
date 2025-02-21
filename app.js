@@ -24,7 +24,7 @@ app.use(cookieParser());
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/user", userRouter);
 app.use("/api/v1/subscription", subscriptionRouter);
-app.use("/api/v1/workflow", workflowRouter);
+app.use("/api/v1/workflows", workflowRouter);
 
 app.get("/", (req, res) => {
   res.send(`Welcome to the Subscription Tracker API`);
