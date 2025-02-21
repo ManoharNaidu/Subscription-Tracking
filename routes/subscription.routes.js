@@ -20,7 +20,6 @@ subscriptionRouter.put("/:id", (req, res) => {
 });
 
 subscriptionRouter.patch("/:id", (req, res) => {
-  console.log(req.body);
   res.send({ message: "Subscription Patch" });
 });
 
