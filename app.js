@@ -9,14 +9,14 @@ import { connectDB } from "./database/mongoDB.js";
 
 // Middlewares
 import errorMiddleware from "./middlewares/error.middleware.js";
-// import arcjetMiddleware from "./middlewares/arcjet.middleware.js";
+import arcjetMiddleware from "./middlewares/arcjet.middleware.js";
 import workflowRouter from "./routes/workflow.routes.js";
 
 connectDB();
 
 const app = express();
 app.use(errorMiddleware);
-// app.use(arcjetMiddleware);
+app.use(arcjetMiddleware);
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
